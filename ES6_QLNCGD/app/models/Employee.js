@@ -1,11 +1,11 @@
 import Person from "../models/Person.js";
 
 export default class Employee extends Person {
-    constructor() {
-        super();
+    constructor(id, ten, diaChi, email, loai) {
+        super(id, ten, diaChi, email, loai);
         this.soNgay = '';
         this.luong = '';
-        this.loai = 'loai2';
+        this.loai = loai = 'loai2'
     }
 
     tinhLuong = () => {

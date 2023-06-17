@@ -1,12 +1,12 @@
 import Person from "../models/Person.js";
 
 export default class Student extends Person {
-    constructor() {
-        super();
+    constructor(id, ten, diaChi, email, loai) {
+        super(id, ten, diaChi, email, loai);
         this.toan = '';
         this.ly = '';
         this.hoa = '';
-        this.loai = 'loai1';
+        this.loai = loai = 'loai1';
     }
 
     diemTrungBinh = () => {

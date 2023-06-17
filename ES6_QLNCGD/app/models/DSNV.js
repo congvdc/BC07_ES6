@@ -39,7 +39,7 @@ export default class DSNV {
             </tr>
             `;
         });
-        document.getElementById('tbodyEmployee').innerHTML = content;
+        document.getElementById('tbodyEmployee').innerHTML = content.join('');
     }
     luuLocalNV() {
         localStorage.setItem('arrNV', JSON.stringify(this.arrNV));
@@ -90,6 +90,8 @@ export default class DSNV {
             .trim()
             .includes(newKeyWord.toLowerCase().trim());
         });
+
+
     }
 
 }

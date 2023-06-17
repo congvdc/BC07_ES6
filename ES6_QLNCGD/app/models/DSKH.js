@@ -11,8 +11,8 @@ export default class DSKH {
     renderKH() {
         let content = this.arrKH.map((item, index) => {
             let cus = new Customer();
+            
             Object.assign(cus, item);
-
             let {
                 id,
                 ten,
@@ -39,7 +39,7 @@ export default class DSKH {
             </tr>
             `;
         });
-        document.getElementById('tbodyCustomer').innerHTML = content;
+        document.getElementById('tbodyCustomer').innerHTML = content.join('');
     }
     luuLocalKH() {
         localStorage.setItem('arrKH', JSON.stringify(this.arrKH));

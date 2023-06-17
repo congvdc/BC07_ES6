@@ -2,7 +2,6 @@ import Employee from '../models/Employee.js';
 import DSNV from '../models/DSNV.js';
 
 let dsnv = new DSNV();
-
 dsnv.layLocalNV();
 
 document.getElementById('btnThemEmp').addEventListener('click', () => {

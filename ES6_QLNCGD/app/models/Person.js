@@ -1,12 +1,12 @@
 
 
 export default class Person {
-    constructor() {
-        this.id = '';
-        this.ten = '';
-        this.diaChi = '';
-        this.email = '';
-        this.loai ='';
+    constructor(id, ten, diaChi, email, loai) {
+        this.id = id;
+        this.ten = ten;
+        this.diaChi = diaChi;
+        this.email = email;
+        this.loai = loai;
     }
     
 }

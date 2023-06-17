@@ -41,7 +41,7 @@ export default class DSHS {
             </tr>
             `;
         });
-        document.getElementById('tbodyStudent').innerHTML = content;
+        document.getElementById('tbodyStudent').innerHTML = content.join('');
     }
     luuLocalHS() {
         localStorage.setItem('arrHS', JSON.stringify(this.arrHS));
