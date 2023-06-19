@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Jekyll v4.1.1">
-  <title>Dashboard Customer</title>
+  <title>Dashboard User</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
     crossorigin="anonymous" />
@@ -45,7 +45,7 @@
       data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input id="inputSearch" oninput="timKiemKH(event)" class="form-control form-control-dark w-100" type="text"
+    <input id="inputSearch" oninput="timKiemUser(event)" class="form-control form-control-dark w-100" type="text"
       placeholder="Search" aria-label="Search">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
@@ -63,12 +63,6 @@
               <a class="nav-link" href="./index.html">
                 <i class="fa fa-home"></i>
                 List Person <span class="sr-only">(current)</span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./food.html">
-                <i class="fa fa-utensils"></i>
-                Add Food
               </a>
             </li>
             <li class="nav-item">
@@ -102,7 +96,7 @@
         <nav class="my-3" aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="./index.html">List Person</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Customer List</li>
+            <!-- <li class="breadcrumb-item active" aria-current="page">Customer List</li> -->
           </ol>
         </nav>
 
@@ -110,10 +104,10 @@
         <!-- Button trigger modal -->
         <div class="row">
           <div class="col-8">
-            <!-- <button id="btnThemKH" type="button" class="btn btn-warning mb-3 text-white" data-toggle="modal"
+            <button id="btnThemUser" type="button" class="btn btn-warning mb-3 text-white" data-toggle="modal"
               data-target="#exampleModal">
               Thêm Người Dùng
-            </button> -->
+            </button>
           </div>
           <div class="col-4">
             <div class="form-group row">
@@ -179,7 +173,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <form class="needs-validation" id="customerForm">
+          <form class="needs-validation" id="personForm">
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="id">Mã Người Dùng</label>
@@ -210,8 +204,15 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="tencty">Loại Người Dùng</label>
-                <input type="text" class="form-control" id="tencty" placeholder="Nhập tên công ty" value="" required>
-                <div id="invalidTencty" class="invalid-feedback">
+                <!-- <input type="text" class="form-control" id="tencty" placeholder="Nhập tên công ty" value="" required> -->
+                <select class="custom-select d-block w-100" id="loai" required>
+                  <option value="">Chọn loại người dùng</option>
+                  <option value="0">Học Sinh</option>
+                  <option value="1">Nhân Viên</option>
+                  <option value="2">Khách Hàng</option>
+                  
+                </select>
+                <div id="invalidLoai" class="invalid-feedback">
 
                 </div>
               </div>
@@ -222,9 +223,9 @@
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" id="btnCloseCus" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-warning" id="btnCapNhatCus">Cập Nhật</button>
-          <button type="button" class="btn btn-warning" id="btnThemCus">Thêm</button>
+          <button type="button" class="btn btn-secondary" id="btnClosePer" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-warning" id="btnCapNhatPer">Cập Nhật</button>
+          <button type="button" class="btn btn-warning" id="btnThemPer">Thêm</button>
         </div>
       </div>
     </div>
@@ -234,7 +235,7 @@
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 
-  <script type="module" src="../models/ListPerson.js"></script>
+  <script type="module" src="../controllers/userList.js"></script>
 </body>
 
 </html>
