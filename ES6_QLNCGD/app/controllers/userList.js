@@ -1,49 +1,47 @@
-import Person from "../models/Person";
-import DSUsers from "../models/DSUsers";
+import Person from "../models/Person.js";
+import DSUsers from "../models/DSUsers.js";
 
-let user = new DSUsers();
-user.layLocalUser();
+let dsu = new DSUsers();
+dsu.layLocalUser();
 
 document.getElementById('btnThemPer').addEventListener('click', () => {
     let arrInput = document.querySelectorAll(
-      '#personForm input, #personForm select, #personForm textarea'
+        '#personForm input, #personForm select, #personForm textarea'
     );
-    let user = new Person();
+    let per = new Person();
     for (let item of arrInput) {
-      let { id, value } = item;
-      user[id] = value;
+        let { id, value } = item;
+        per[id] = value;
     }
-    user.themUser(user);
-    user.renderUser();
-    user.luuLocal();
+    dsu.themUser(per);
+    dsu.renderUser();
+    dsu.luuLocalUser();
     document.getElementById('btnClosePer').click();
-  });
-  
-  window.xoaUser = (id) => {
-    user.xoaUser(id);
-  };
-  
-  window.layThongTinUser = (id) => {
-    user.layThongTinUser(id);
-  };
-  
-  document.getElementById('btnCapNhatPer').onclick = () => {
+});
+
+window.xoaUser = (id) => {
+    dsu.xoaUser(id);
+};
+
+window.layThongTinUser = (id) => {
+    dsu.layThongTinUser(id);
+};
+
+document.getElementById('btnCapNhatPer').onclick = () => {
     // lấy dữ liệu người dùng
     let arrInput = document.querySelectorAll(
         '#personForm input, #personForm select, #personForm textarea'
     );
-    let user = new Person();
-    // dùng vòng lặp để lấy dữ liệu từ arrInput và thêm vào đối tượng món ăn
+    let per = new Person();
     for (let item of arrInput) {
-      let { id, value } = item;
-      user[id] = value;
+        let { id, value } = item;
+        per[id] = value;
     }
-    user.chinhSuaUser(id);
-  };
-  
-  window.timKiemUser = (event) => {
+    dsu.chinhSuaUser(id);
+};
+
+window.timKiemUser = (event) => {
     let value = event.target.value;
     console.log(value);
-    user.timKiemUser(value);
-  };
-  
+    dsu.timKiemUser(value);
+};

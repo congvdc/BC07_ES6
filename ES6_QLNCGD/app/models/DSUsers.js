@@ -1,12 +1,12 @@
-import Person from "./Personn";
+import Person from "./Person.js";
 import removeVietnameseTones from '../controllers/helper.js';
 
 export default class DSUsers {
     constructor () {
         this.arrPerson = [];
     }
-    themUser(user) {
-        this.arrPerson.push(user);
+    themUser(per) {
+        this.arrPerson.push(per);
     }
     renderUser() {
         let content = this.arrPerson.map((item, index) => {       
@@ -27,7 +27,7 @@ export default class DSUsers {
                 <td>${ten}</td>
                 <td>${diaChi}</td>
                 <td>${email}</th>
-                <td>${loai}</td>
+                <td>${loai == 'loai0' ? 'Học Sinh' : loai == 'loai1' ? 'Nhân Viên' : 'Khách Hàng'}</td>
                 <td>
                 <button class="btn btn-danger" onclick="xoaUser('${id}')">Xóa</button>
                 <button class="btn btn-warning" onclick="layThongTinUser('${id}')">Sửa</button>
@@ -55,7 +55,7 @@ export default class DSUsers {
             this.luuLocalUser();
         }
     }
-    layThongTinUsser(idUser) {
+    layThongTinUser(idUser) {
         let user = this.arrPerson.find((item) => item.id == idUser);
         if (user) {
             document.getElementById('btnThemUser').click();

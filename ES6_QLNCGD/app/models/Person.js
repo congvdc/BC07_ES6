@@ -1,3 +1,9 @@
+// Peron = MonAn
+// per = monAN
+// userList = index
+// DSUsers = Menu
+// dsu = menu
+// arrPerson = arrMenu
 
 
 export default class Person {
